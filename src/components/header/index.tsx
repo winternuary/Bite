@@ -1,6 +1,8 @@
 "use client";
 
 import styled from "styled-components";
+import Link from "next/link";
+
 export const HeaderLayout = styled.div`
   margin: 56px 156px 0 156px;
   display: flex;
@@ -17,14 +19,16 @@ export const Button = styled.button`
   background-color: #6df2a5;
   border: none;
   padding: 10px 32px;
-  border-radius: 4;
+  border-radius: 4px;
 `;
 
 const Header = () => {
   return (
     <HeaderLayout>
-      <Logo src="/BiteLogo.svg " />
-      <Button>로그인</Button>
+      <Logo src="/BiteLogo.svg" />
+      <Link href="/login">
+        <Button>로그인</Button>
+      </Link>
     </HeaderLayout>
   );
 };
