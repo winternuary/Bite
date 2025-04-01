@@ -2,6 +2,7 @@
 
 import * as S from "./style";
 import { useState } from "react";
+import Link from "next/link";
 import Header from "@/components/header";
 
 const Main = () => {
@@ -42,61 +43,84 @@ const Main = () => {
           </S.Button>
         </S.CategoryBox>
         <S.MainBox>
-          <S.goods>
-            <S.goodsImage src="/goods.svg" />
-            <S.Title>휴지</S.Title>
-            <S.SubTitleBox>
-              <S.Money>4000원</S.Money>
-              <S.PeopleBox>
-                <S.PeopleImg src="/people.svg" />
-                <S.PeopleText>2/4</S.PeopleText>
-              </S.PeopleBox>
-            </S.SubTitleBox>
-          </S.goods>
-          <S.goods>
-            <S.goodsImage src="/goods.svg" />
-            <S.Title>휴지</S.Title>
-            <S.SubTitleBox>
-              <S.Money>4000원</S.Money>
-              <S.PeopleBox>
-                <S.PeopleImg src="/people.svg" />
-                <S.PeopleText>2/4</S.PeopleText>
-              </S.PeopleBox>
-            </S.SubTitleBox>
-          </S.goods>
-          <S.goods>
-            <S.goodsImage src="/goods.svg" />
-            <S.Title>휴지</S.Title>
-            <S.SubTitleBox>
-              <S.Money>4000원</S.Money>
-              <S.PeopleBox>
-                <S.PeopleImg src="/people.svg" />
-                <S.PeopleText>2/4</S.PeopleText>
-              </S.PeopleBox>
-            </S.SubTitleBox>
-          </S.goods>
-          <S.goods>
-            <S.goodsImage src="/goods.svg" />
-            <S.Title>휴지</S.Title>
-            <S.SubTitleBox>
-              <S.Money>4000원</S.Money>
-              <S.PeopleBox>
-                <S.PeopleImg src="/people.svg" />
-                <S.PeopleText>2/4</S.PeopleText>
-              </S.PeopleBox>
-            </S.SubTitleBox>
-          </S.goods>
-          <S.goods>
-            <S.goodsImage src="/goods.svg" />
-            <S.Title>휴지</S.Title>
-            <S.SubTitleBox>
-              <S.Money>4000원</S.Money>
-              <S.PeopleBox>
-                <S.PeopleImg src="/people.svg" />
-                <S.PeopleText>2/4</S.PeopleText>
-              </S.PeopleBox>
-            </S.SubTitleBox>
-          </S.goods>
+          <Link href="/detail">
+            <S.goods>
+              <S.goodsImage src="/goods.svg" />
+              <S.Title>휴지</S.Title>
+              <S.SubTitleBox>
+                <S.Money>4000원</S.Money>
+                <S.PeopleBox>
+                  <S.PeopleImg src="/people.svg" />
+                  <S.PeopleText>2/4</S.PeopleText>
+                </S.PeopleBox>
+              </S.SubTitleBox>
+            </S.goods>
+          </Link>
+          <Link href="/detail">
+            <S.goods>
+              <S.goodsImage src="/goods.svg" />
+              <S.Title>휴지</S.Title>
+              <S.SubTitleBox>
+                <S.Money>4000원</S.Money>
+                <S.PeopleBox>
+                  <S.PeopleImg src="/people.svg" />
+                  <S.PeopleText>2/4</S.PeopleText>
+                </S.PeopleBox>
+              </S.SubTitleBox>
+            </S.goods>
+          </Link>
+          <Link href="/detail">
+            <S.goods>
+              <S.goodsImage src="/goods.svg" />
+              <S.Title>휴지</S.Title>
+              <S.SubTitleBox>
+                <S.Money>4000원</S.Money>
+                <S.PeopleBox>
+                  <S.PeopleImg src="/people.svg" />
+                  <S.PeopleText>2/4</S.PeopleText>
+                </S.PeopleBox>
+              </S.SubTitleBox>
+            </S.goods>
+          </Link>
+          <Link href="/detail">
+            <S.goods>
+              <S.goodsImage src="/goods.svg" />
+              <S.Title>휴지</S.Title>
+              <S.SubTitleBox>
+                <S.Money>4000원</S.Money>
+                <S.PeopleBox>
+                  <S.PeopleImg src="/people.svg" />
+                  <S.PeopleText>2/4</S.PeopleText>
+                </S.PeopleBox>
+              </S.SubTitleBox>
+            </S.goods>
+          </Link>
+          <Link href="/detail">
+            <S.goods>
+              <S.goodsImage src="/goods.svg" />
+              <S.Title>휴지</S.Title>
+              <S.SubTitleBox>
+                <S.Money>4000원</S.Money>
+                <S.PeopleBox>
+                  <S.PeopleImg src="/people.svg" />
+                  <S.PeopleText>2/4</S.PeopleText>
+                </S.PeopleBox>
+              </S.SubTitleBox>
+            </S.goods>
+          </Link>
+          <Link href="/detail">
+            <S.goods>
+              <S.goodsImage src="/goods.svg" />
+              <S.Title>휴지</S.Title>
+              <S.SubTitleBox>
+                <S.Money>4000원</S.Money>
+                <S.PeopleBox>
+                  <S.PeopleImg src="/people.svg" />
+                  <S.PeopleText>2/4</S.PeopleText>
+                </S.PeopleBox>
+              </S.SubTitleBox>
+            </S.goods>
+          </Link>
         </S.MainBox>
       </S.MainLayout>
     </>

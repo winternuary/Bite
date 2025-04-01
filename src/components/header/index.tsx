@@ -35,7 +35,9 @@ export const Text = styled.p`
 const Header = () => {
   return (
     <HeaderLayout>
-      <Logo src="/BiteLogo.svg" />
+      <Link href="/">
+        <Logo src="/BiteLogo.svg" />
+      </Link>
       <ButtonBox>
         {/* <Text>김영은님</Text> */}
         <Link href="/login">

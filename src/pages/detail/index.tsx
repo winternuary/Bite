@@ -1,6 +1,7 @@
 "use client";
 
 import * as S from "./style";
+import Link from "next/link";
 import Header from "@/components/header";
 
 const Detail = () => {
@@ -8,7 +9,9 @@ const Detail = () => {
     <>
       <Header />
       <S.DetailLayout>
-        <S.Back src="/back.svg" />
+        <Link href="/">
+          <S.Back src="/back.svg" />
+        </Link>
         <S.DetailBox>
           <S.Goods src="/goods.svg" />
           <S.RightBox>

@@ -39,6 +39,7 @@ export const Title = styled.p`
 export const Name = styled.p`
   font-family: "Pretendard-Regular";
   font-size: 20px;
+  font-weight: 500;
   margin: 0;
 `;
 
@@ -56,6 +57,7 @@ export const PeopleText = styled.p`
   margin: 0;
   font-family: "Pretendard-Regular";
   font-size: 20px;
+  font-weight: 500;
 `;
 
 export const Money = styled.p`
@@ -68,6 +70,7 @@ export const Money = styled.p`
 export const Explain = styled.p`
   font-family: "Pretendard-Regular";
   font-size: 20px;
+  font-weight: 500;
   margin-top: 32px;
 `;
 
@@ -75,12 +78,14 @@ export const LinkTitle = styled.p`
   font-family: "Pretendard-Regular";
   font-size: 20px;
   color: #333333;
+  font-weight: 500;
   margin: 120px 0 0 0;
 `;
 
 export const Link = styled.p`
   font-family: "Pretendard-Regular";
   font-size: 20px;
+  font-weight: 500;
   margin: 4px 0 0 0;
   color: #0073ff;
 `;
@@ -92,6 +97,7 @@ export const Button = styled.button`
   background-color: #0073ff;
   color: #ffffff;
   border: none;
+  font-weight: 500;
   border-radius: 4px;
   margin-top: 40px;
 `;
