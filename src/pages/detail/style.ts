@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const DetailLayout = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 96px 156px;
+  margin: 66px 156px;
 `;
 
 export const Back = styled.img`
@@ -31,28 +31,67 @@ export const TitleBox = styled.div`
 
 export const Title = styled.p`
   font-family: "Pretendard-Regular";
+  font-size: 36px;
+  font-weight: 550;
+  margin: 0;
 `;
 
-export const Name = styled.p``;
+export const Name = styled.p`
+  font-family: "Pretendard-Regular";
+  font-size: 20px;
+  margin: 0;
+`;
 
 export const SubTitleBox = styled.div``;
 
 export const PeopleBox = styled.div`
   display: flex;
   gap: 4px;
-  margin: 0;
+  margin: 20px 0 0 0;
 `;
 
 export const PeopleImg = styled.img``;
 
-export const PeopleText = styled.p``;
+export const PeopleText = styled.p`
+  margin: 0;
+  font-family: "Pretendard-Regular";
+  font-size: 20px;
+`;
 
-export const Money = styled.p``;
+export const Money = styled.p`
+  font-family: "Pretendard-Regular";
+  font-size: 36px;
+  font-weight: 550;
+  margin: 50px 0 0 0;
+`;
 
-export const Explain = styled.p``;
+export const Explain = styled.p`
+  font-family: "Pretendard-Regular";
+  font-size: 20px;
+  margin-top: 32px;
+`;
 
-export const LinkTitle = styled.p``;
+export const LinkTitle = styled.p`
+  font-family: "Pretendard-Regular";
+  font-size: 20px;
+  color: #333333;
+  margin: 120px 0 0 0;
+`;
 
-export const Link = styled.p``;
+export const Link = styled.p`
+  font-family: "Pretendard-Regular";
+  font-size: 20px;
+  margin: 4px 0 0 0;
+  color: #0073ff;
+`;
 
-export const Button = styled.button``;
+export const Button = styled.button`
+  font-family: "Pretendard-Regular";
+  font-size: 20px;
+  padding: 16px 204px;
+  background-color: #0073ff;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  margin-top: 40px;
+`;

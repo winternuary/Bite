@@ -13,7 +13,7 @@ export const Button = styled.button<{ isSelected: boolean }>`
   font-family: "Pretendard-Regular";
   font-size: 18px;
   color: ${({ isSelected }) => (isSelected ? "#ffffff" : "#6B6B6B")};
-  background-color: ${({ isSelected }) => (isSelected ? "#6DF2A5" : "#F3F4F5")};
+  background-color: ${({ isSelected }) => (isSelected ? "#0073FF" : "#F3F4F5")};
   border: none;
   padding: 10px 32px;
   border-radius: 4px;

@@ -21,7 +21,7 @@ export const Button = styled.button`
   font-family: "Pretendard-Regular";
   font-size: 16px;
   color: #ffffff;
-  background-color: #6df2a5;
+  background-color: #0073ff;
   border: none;
   padding: 10px 32px;
   border-radius: 4px;
