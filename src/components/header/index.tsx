@@ -12,6 +12,11 @@ export const HeaderLayout = styled.div`
 
 export const Logo = styled.img``;
 
+export const ButtonBox = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 20px;
+`;
 export const Button = styled.button`
   font-family: "Pretendard-Regular";
   font-size: 16px;
@@ -21,14 +26,23 @@ export const Button = styled.button`
   padding: 10px 32px;
   border-radius: 4px;
 `;
+export const Text = styled.p`
+  font-family: "Pretendard-Regular";
+  font-size: 20px;
+  color: #808080;
+`;
 
 const Header = () => {
   return (
     <HeaderLayout>
       <Logo src="/BiteLogo.svg" />
-      <Link href="/login">
-        <Button>로그인</Button>
-      </Link>
+      <ButtonBox>
+        {/* <Text>김영은님</Text> */}
+        <Link href="/login">
+          <Button>로그인</Button>
+        </Link>
+        {/* <Button>물건 올리기</Button> */}
+      </ButtonBox>
     </HeaderLayout>
   );
 };
