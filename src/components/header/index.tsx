@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Link from "next/link";
 
 export const HeaderLayout = styled.div`
-  margin: 56px 156px 0 156px;
+  margin: 22.5px 200px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -19,12 +19,12 @@ export const ButtonBox = styled.div`
 `;
 export const Button = styled.button`
   font-family: "Pretendard-Regular";
-  font-size: 16px;
+  font-size: 18px;
   color: #ffffff;
   background-color: #0073ff;
   border: none;
-  padding: 10px 32px;
-  border-radius: 4px;
+  padding: 12px 24px;
+  border-radius: 8px;
 `;
 export const Text = styled.p`
   font-family: "Pretendard-Regular";
