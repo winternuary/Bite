@@ -9,23 +9,19 @@ const Detail = () => {
     <>
       <Header />
       <S.DetailLayout>
-        <Link href="/">
-          <S.Back src="/back.svg" />
-        </Link>
         <S.DetailBox>
-          <S.Goods src="/goods.svg" />
+          <S.Goods src="/detailgoods.svg" />
+
           <S.RightBox>
             <S.TitleBox>
-              <S.Title>휴지</S.Title>
-              <S.Name>김영은님</S.Name>
+              <S.Name>김영은</S.Name>
+              <S.Title>나무 대신 휴지 12개입</S.Title>
+              <S.Money>4,000원</S.Money>
             </S.TitleBox>
-            <S.SubTitleBox>
-              <S.PeopleBox>
-                <S.PeopleImg src="/people.svg" />
-                <S.PeopleText>2/4</S.PeopleText>
-              </S.PeopleBox>
-            </S.SubTitleBox>
-            <S.Money>4000원</S.Money>
+            <S.PeopleBox>
+              <S.PeopleImg src="/people.svg" />
+              <S.PeopleText>2/4</S.PeopleText>
+            </S.PeopleBox>
             <S.Explain>
               기숙사 휴지 공구하실 분 구합니다ㅏ <br /> 1인당 4개씩 가질 수
               있음!

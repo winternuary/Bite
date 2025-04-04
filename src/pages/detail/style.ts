@@ -3,11 +3,7 @@ import styled from "styled-components";
 export const DetailLayout = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 66px 156px;
-`;
-
-export const Back = styled.img`
-  width: 24px;
+  margin: 50px 156px;
 `;
 
 export const DetailBox = styled.div`
@@ -15,25 +11,18 @@ export const DetailBox = styled.div`
   margin-top: 20px;
 `;
 
-export const Goods = styled.img`
-  width: 50%;
-`;
+export const Goods = styled.img``;
 
 export const RightBox = styled.div`
-  margin-left: 60px;
+  margin-left: 40px;
   width: 50%;
 `;
 
 export const TitleBox = styled.div`
   display: flex;
-  justify-content: space-between;
-`;
-
-export const Title = styled.p`
-  font-family: "Pretendard-Regular";
-  font-size: 36px;
-  font-weight: 550;
-  margin: 0;
+  flex-direction: column;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e1e1e1;
 `;
 
 export const Name = styled.p`
@@ -43,7 +32,12 @@ export const Name = styled.p`
   margin: 0;
 `;
 
-export const SubTitleBox = styled.div``;
+export const Title = styled.p`
+  font-family: "Pretendard-Regular";
+  font-size: 32px;
+  font-weight: 550;
+  margin: 0;
+`;
 
 export const PeopleBox = styled.div`
   display: flex;
@@ -62,14 +56,15 @@ export const PeopleText = styled.p`
 
 export const Money = styled.p`
   font-family: "Pretendard-Regular";
-  font-size: 36px;
+  font-size: 24px;
   font-weight: 550;
-  margin: 50px 0 0 0;
+  color: #0073ff;
+  margin: 10px 0 0 0;
 `;
 
 export const Explain = styled.p`
   font-family: "Pretendard-Regular";
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 500;
   margin-top: 32px;
 `;
