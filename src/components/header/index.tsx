@@ -3,6 +3,10 @@
 import styled from "styled-components";
 import Link from "next/link";
 
+export const WholeLayout = styled.div`
+  border-bottom: 1px solid #f5f5f5;
+`;
+
 export const HeaderLayout = styled.div`
   margin: 22.5px 200px;
   display: flex;
@@ -34,18 +38,20 @@ export const Text = styled.p`
 
 const Header = () => {
   return (
-    <HeaderLayout>
-      <Link href="/">
-        <Logo src="/BiteLogo.svg" />
-      </Link>
-      <ButtonBox>
-        {/* <Text>김영은님</Text> */}
-        <Link href="/login">
-          <Button>로그인</Button>
+    <WholeLayout>
+      <HeaderLayout>
+        <Link href="/">
+          <Logo src="/BiteLogo.svg" />
         </Link>
-        {/* <Button>물건 올리기</Button> */}
-      </ButtonBox>
-    </HeaderLayout>
+        <ButtonBox>
+          {/* <Text>김영은님</Text> */}
+          <Link href="/login">
+            <Button>로그인</Button>
+          </Link>
+          {/* <Button>물건 올리기</Button> */}
+        </ButtonBox>
+      </HeaderLayout>
+    </WholeLayout>
   );
 };
 

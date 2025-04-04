@@ -43,84 +43,142 @@ const Main = () => {
           </S.Button>
         </S.CategoryBox>
         <S.MainBox>
-          <Link href="/detail">
+          <S.Link href="/detail">
             <S.goods>
               <S.goodsImage src="/goods.svg" />
-              <S.Title>휴지</S.Title>
+              <S.Title>대왕롤앤롤 라벤더 3겹</S.Title>
+              <S.Money>4000원</S.Money>
               <S.SubTitleBox>
-                <S.Money>4000원</S.Money>
+                <S.ProfileBox>
+                  <S.Profile src="/profile.svg" />
+                  <S.ProfileName>강민지</S.ProfileName>
+                </S.ProfileBox>
                 <S.PeopleBox>
                   <S.PeopleImg src="/people.svg" />
                   <S.PeopleText>2/4</S.PeopleText>
                 </S.PeopleBox>
               </S.SubTitleBox>
             </S.goods>
-          </Link>
-          <Link href="/detail">
+          </S.Link>
+          <S.Link href="/detail">
             <S.goods>
               <S.goodsImage src="/goods.svg" />
-              <S.Title>휴지</S.Title>
+              <S.Title>대왕롤앤롤 라벤더 3겹</S.Title>
+              <S.Money>4000원</S.Money>
               <S.SubTitleBox>
-                <S.Money>4000원</S.Money>
+                <S.ProfileBox>
+                  <S.Profile src="/profile.svg" />
+                  <S.ProfileName>강민지</S.ProfileName>
+                </S.ProfileBox>
                 <S.PeopleBox>
                   <S.PeopleImg src="/people.svg" />
                   <S.PeopleText>2/4</S.PeopleText>
                 </S.PeopleBox>
               </S.SubTitleBox>
             </S.goods>
-          </Link>
-          <Link href="/detail">
+          </S.Link>
+          <S.Link href="/detail">
             <S.goods>
               <S.goodsImage src="/goods.svg" />
-              <S.Title>휴지</S.Title>
+              <S.Title>대왕롤앤롤 라벤더 3겹</S.Title>
+              <S.Money>4000원</S.Money>
               <S.SubTitleBox>
-                <S.Money>4000원</S.Money>
+                <S.ProfileBox>
+                  <S.Profile src="/profile.svg" />
+                  <S.ProfileName>강민지</S.ProfileName>
+                </S.ProfileBox>
                 <S.PeopleBox>
                   <S.PeopleImg src="/people.svg" />
                   <S.PeopleText>2/4</S.PeopleText>
                 </S.PeopleBox>
               </S.SubTitleBox>
             </S.goods>
-          </Link>
-          <Link href="/detail">
+          </S.Link>
+          <S.Link href="/detail">
             <S.goods>
               <S.goodsImage src="/goods.svg" />
-              <S.Title>휴지</S.Title>
+              <S.Title>대왕롤앤롤 라벤더 3겹</S.Title>
+              <S.Money>4000원</S.Money>
               <S.SubTitleBox>
-                <S.Money>4000원</S.Money>
+                <S.ProfileBox>
+                  <S.Profile src="/profile.svg" />
+                  <S.ProfileName>강민지</S.ProfileName>
+                </S.ProfileBox>
                 <S.PeopleBox>
                   <S.PeopleImg src="/people.svg" />
                   <S.PeopleText>2/4</S.PeopleText>
                 </S.PeopleBox>
               </S.SubTitleBox>
             </S.goods>
-          </Link>
-          <Link href="/detail">
+          </S.Link>
+          <S.Link href="/detail">
             <S.goods>
               <S.goodsImage src="/goods.svg" />
-              <S.Title>휴지</S.Title>
+              <S.Title>대왕롤앤롤 라벤더 3겹</S.Title>
+              <S.Money>4000원</S.Money>
               <S.SubTitleBox>
-                <S.Money>4000원</S.Money>
+                <S.ProfileBox>
+                  <S.Profile src="/profile.svg" />
+                  <S.ProfileName>강민지</S.ProfileName>
+                </S.ProfileBox>
                 <S.PeopleBox>
                   <S.PeopleImg src="/people.svg" />
                   <S.PeopleText>2/4</S.PeopleText>
                 </S.PeopleBox>
               </S.SubTitleBox>
             </S.goods>
-          </Link>
-          <Link href="/detail">
+          </S.Link>
+          <S.Link href="/detail">
             <S.goods>
               <S.goodsImage src="/goods.svg" />
-              <S.Title>휴지</S.Title>
+              <S.Title>대왕롤앤롤 라벤더 3겹</S.Title>
+              <S.Money>4000원</S.Money>
               <S.SubTitleBox>
-                <S.Money>4000원</S.Money>
+                <S.ProfileBox>
+                  <S.Profile src="/profile.svg" />
+                  <S.ProfileName>강민지</S.ProfileName>
+                </S.ProfileBox>
                 <S.PeopleBox>
                   <S.PeopleImg src="/people.svg" />
                   <S.PeopleText>2/4</S.PeopleText>
                 </S.PeopleBox>
               </S.SubTitleBox>
             </S.goods>
-          </Link>
+          </S.Link>
+          <S.Link href="/detail">
+            <S.goods>
+              <S.goodsImage src="/goods.svg" />
+              <S.Title>대왕롤앤롤 라벤더 3겹</S.Title>
+              <S.Money>4000원</S.Money>
+              <S.SubTitleBox>
+                <S.ProfileBox>
+                  <S.Profile src="/profile.svg" />
+                  <S.ProfileName>강민지</S.ProfileName>
+                </S.ProfileBox>
+                <S.PeopleBox>
+                  <S.PeopleImg src="/people.svg" />
+                  <S.PeopleText>2/4</S.PeopleText>
+                </S.PeopleBox>
+              </S.SubTitleBox>
+            </S.goods>
+          </S.Link>
+          <S.Link href="/detail">
+            <S.goods>
+              <S.goodsImage src="/goods.svg" />
+              <S.Title>대왕롤앤롤 라벤더 3겹</S.Title>
+              <S.Money>4000원</S.Money>
+              <S.SubTitleBox>
+                <S.ProfileBox>
+                  <S.Profile src="/profile.svg" />
+                  <S.ProfileName>강민지</S.ProfileName>
+                </S.ProfileBox>
+                <S.PeopleBox>
+                  <S.PeopleImg src="/people.svg" />
+                  <S.PeopleText>2/4</S.PeopleText>
+                </S.PeopleBox>
+              </S.SubTitleBox>
+            </S.goods>
+          </S.Link>
         </S.MainBox>
       </S.MainLayout>
     </>
