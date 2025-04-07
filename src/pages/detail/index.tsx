@@ -1,7 +1,6 @@
 "use client";
 
 import * as S from "./style";
-import Link from "next/link";
 import Header from "@/components/header";
 
 const Detail = () => {

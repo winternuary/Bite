@@ -1,107 +1,110 @@
 import styled from "styled-components";
 
-export const DetailLayout = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin: 66px 156px;
+export const UploadLayout = styled.div`
+  background-color: #f9f9f9;
+  padding: 50px 200px;
 `;
 
-export const Back = styled.img`
-  width: 24px;
+export const Title = styled.p`
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
 `;
 
-export const DetailBox = styled.div`
-  display: flex;
-  margin-top: 20px;
+export const UploadForm = styled.div`
+  background-color: white;
+  padding: 40px;
+  border-radius: 12px;
 `;
 
-export const ImgBox = styled.div``;
-
-export const ImgChoiceText = styled.p``;
-
-export const Or = styled.p``;
-
-export const ImgButton = styled.button``;
-
-export const InputBox = styled.div``;
-
-export const GoodsInput = styled.div`
+export const FormBox = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 24px;
 `;
 
-export const GoodsName = styled.label`
-  font-family: "Pretendard-Regular";
+export const Label = styled.label`
   font-size: 16px;
-  font-weight: 500;
-  margin-bottom: 8px;
+  font-weight: 600;
+  margin-bottom: 10px;
 `;
 
 export const Input = styled.input`
   padding: 12px 16px;
   font-size: 16px;
-  border: 1px solid #dcdcdc;
+  border: 1px solid #ddd;
   border-radius: 6px;
-  outline: none;
-  font-family: "Pretendard-Regular";
 `;
 
 export const TextArea = styled.textarea`
   padding: 12px 16px;
   font-size: 16px;
-  border: 1px solid #dcdcdc;
+  border: 1px solid #ddd;
   border-radius: 6px;
+  height: 140px;
   resize: none;
-  height: 120px;
-  font-family: "Pretendard-Regular";
 `;
 
 export const CountText = styled.p`
-  font-size: 14px;
-  font-family: "Pretendard-Regular";
-  font-weight: 400;
-  color: #999999;
   text-align: right;
-  margin-top: 6px;
+  font-size: 14px;
+  color: #888;
+  margin-top: 4px;
 `;
 
-export const Goods = styled.img`
-  width: 50%;
-`;
-
-export const RightBox = styled.div`
-  margin-left: 60px;
-  width: 50%;
-`;
-
-export const TitleBox = styled.div`
+export const FileBox = styled.div`
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-start;
 `;
 
-export const Title = styled.p`
-  font-family: "Pretendard-Regular";
-  font-size: 36px;
-  font-weight: 550;
-  margin: 0;
+export const FileDropZone = styled.div`
+  border: 1px dashed #ccc;
+  border-radius: 6px;
+  width: 200px;
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fafafa;
+  gap: 10px;
 `;
 
-export const Name = styled.p`
-  font-family: "Pretendard-Regular";
-  font-size: 20px;
-  font-weight: 500;
-  margin: 0;
+export const FileIcon = styled.div`
+  font-size: 32px;
 `;
 
-export const Button = styled.button`
-  font-family: "Pretendard-Regular";
-  font-size: 20px;
-  padding: 16px 204px;
-  background-color: #0073ff;
-  color: #ffffff;
-  border: none;
-  font-weight: 500;
+export const FileText = styled.p`
+  font-size: 14px;
+  color: #999;
+`;
+
+export const FileButton = styled.button`
+  padding: 6px 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
   border-radius: 4px;
-  margin-top: 40px;
+  background-color: white;
+`;
+
+export const DeleteButton = styled.button`
+  margin-top: 10px;
+  background: #f5f5f5;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+`;
+
+export const UploadButton = styled.button`
+  background-color: #0073ff;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  float: right;
+  margin: 20px 0 70px 0;
 `;
