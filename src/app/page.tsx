@@ -1,5 +1,4 @@
-import styles from "./page.module.css";
-import Header from "@/components/header";
+import "@/app/page";
 import Main from "@/pages/main";
 
 export default function Home() {

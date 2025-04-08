@@ -58,17 +58,34 @@ export const FileBox = styled.div`
   align-items: flex-start;
 `;
 
-export const FileDropZone = styled.div`
-  border: 1px dashed #ccc;
+interface FileDropZoneProps {
+  $dragActive?: boolean;
+}
+
+export const FileDropZone = styled.div<FileDropZoneProps>`
+  border: 2px dashed ${({ $dragActive }) => ($dragActive ? "#0073ff" : "#ccc")};
   border-radius: 6px;
-  width: 200px;
+  padding: 20px;
+  width: 100%;
+  max-width: 240px;
   height: 160px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #fafafa;
+  background-color: ${({ $dragActive }) =>
+    $dragActive ? "#eef6ff" : "#fafafa"};
   gap: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+`;
+
+export const ImagePreview = styled.img`
+  width: 100%;
+  max-width: 200px;
+  max-height: 140px;
+  object-fit: cover;
+  border-radius: 6px;
 `;
 
 export const FileIcon = styled.div`
@@ -108,3 +125,7 @@ export const UploadButton = styled.button`
   float: right;
   margin: 20px 0 70px 0;
 `;
+
+interface FileDropZoneProps {
+  $dragActive?: boolean;
+}
