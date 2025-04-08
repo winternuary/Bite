@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const UploadLayout = styled.div`
   background-color: #f9f9f9;
-  padding: 50px 200px;
+  padding: 50px 200px 200px 200px;
 `;
 
 export const Title = styled.p`
