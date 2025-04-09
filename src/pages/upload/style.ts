@@ -129,3 +129,21 @@ export const UploadButton = styled.button`
 interface FileDropZoneProps {
   $dragActive?: boolean;
 }
+
+export const CategoryBox = styled.div`
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+`;
+
+export const Button = styled.button<{ isSelected: boolean }>`
+  font-family: "Pretendard-Regular";
+  font-size: 18px;
+  color: ${({ isSelected }) => (isSelected ? "#ffffff" : "#5A5A5A")};
+  background-color: ${({ isSelected }) => (isSelected ? "#0073FF" : "#ffffff")};
+  border: ${({ isSelected }) => (isSelected ? "none" : "solid 1px #e8e8e8")};
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+`;

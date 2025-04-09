@@ -5,20 +5,19 @@ import Header from "@/components/header";
 import { useRef, useState } from "react";
 
 const Upload = () => {
-  // ✅ 사용자 입력값 상태
+  const [category, setCategory] = useState("생필품");
+
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
   const [link, setLink] = useState("");
   const [people, setPeople] = useState("");
 
-  // ✅ 이미지 관련 상태
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const [file, setFile] = useState<File | null>(null);
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
   const [dragActive, setDragActive] = useState(false);
 
-  // ✅ API 요청 핸들러
   const handleUpload = async () => {
     if (!title || !description || !price || !people || !previewUrl) {
       alert("모든 필수 항목을 입력해주세요.");
@@ -35,6 +34,7 @@ const Upload = () => {
         link,
         people: Number(people),
         imageUrl: previewUrl,
+        category,
       }),
     });
 
@@ -43,7 +43,6 @@ const Upload = () => {
     alert("업로드가 완료되었습니다!");
   };
 
-  // ✅ 파일 핸들러
   const handleFileSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
     const selected = e.target.files?.[0];
     if (selected) {
@@ -112,6 +111,21 @@ const Upload = () => {
             />
             <S.CountText>{description.length}/200자</S.CountText>
           </S.FormBox>
+          <S.FormBox>
+            <S.Label>카테고리 선택</S.Label>
+            <S.CategoryBox>
+              {["생필품", "간식", "기타"].map((cat) => (
+                <S.Button
+                  key={cat}
+                  isSelected={category === cat}
+                  onClick={() => setCategory(cat)}
+                >
+                  {cat}
+                </S.Button>
+              ))}
+            </S.CategoryBox>
+          </S.FormBox>
+
           <S.FormBox>
             <S.Label>제품 가격</S.Label>
             <S.Input

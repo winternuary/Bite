@@ -7,7 +7,8 @@ export default async function handler(
   res: NextApiResponse,
 ) {
   if (req.method === "POST") {
-    const { title, description, price, link, people, imageUrl } = req.body;
+    const { title, description, price, link, people, imageUrl, category } =
+      req.body;
 
     try {
       const post = await prisma.post.create({
@@ -18,6 +19,7 @@ export default async function handler(
           link,
           people: Number(people),
           imageUrl,
+          category,
         },
       });
 
