@@ -35,8 +35,12 @@ export const goods = styled.div`
   border-radius: 12px;
 `;
 
-export const goodsImage = styled.img``;
-
+export const goodsImage = styled.img`
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+`;
 export const Title = styled.p`
   margin: 12px 0 0 0;
   font-family: "Pretendard-Regular";

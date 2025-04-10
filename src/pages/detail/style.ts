@@ -11,7 +11,13 @@ export const DetailBox = styled.div`
   margin-top: 20px;
 `;
 
-export const Goods = styled.img``;
+export const Goods = styled.img`
+  width: 550px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  background-color: #f9f9f9;
+`;
 
 export const RightBox = styled.div`
   margin-left: 40px;
@@ -77,12 +83,13 @@ export const LinkTitle = styled.p`
   margin: 120px 0 0 0;
 `;
 
-export const Link = styled.p`
+export const Link = styled.a`
   font-family: "Pretendard-Regular";
   font-size: 20px;
   font-weight: 500;
   margin: 4px 0 0 0;
   color: #0073ff;
+  text-decoration: underline;
 `;
 
 export const Button = styled.button`

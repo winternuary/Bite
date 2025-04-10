@@ -1,4 +1,3 @@
-// pages/api/post.ts
 import type { NextApiRequest, NextApiResponse } from "next";
 import { prisma } from "@/lib/prisma";
 
@@ -27,6 +26,16 @@ export default async function handler(
     } catch (error) {
       console.error(error);
       return res.status(500).json({ message: "서버 에러" });
+    }
+  } else if (req.method === "GET") {
+    try {
+      const posts = await prisma.post.findMany({
+        orderBy: { createdAt: "desc" },
+      });
+      return res.status(200).json(posts);
+    } catch (error) {
+      console.error(error);
+      return res.status(500).json({ message: "데이터 불러오기 실패" });
     }
   } else {
     return res.status(405).json({ message: "허용되지 않은 메서드" });
