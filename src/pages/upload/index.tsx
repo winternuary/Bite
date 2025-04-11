@@ -3,22 +3,27 @@
 import * as S from "./style";
 import Header from "@/components/header";
 import { useRef, useState } from "react";
+import { useSession } from "next-auth/react";
 
 const Upload = () => {
+  const { data: session } = useSession();
   const [category, setCategory] = useState("생필품");
-
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
   const [link, setLink] = useState("");
   const [people, setPeople] = useState("");
-
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const [file, setFile] = useState<File | null>(null);
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
   const [dragActive, setDragActive] = useState(false);
 
   const handleUpload = async () => {
+    if (!session?.user?.email) {
+      alert("로그인이 필요합니다.");
+      return;
+    }
+
     if (!title || !description || !price || !people || !previewUrl) {
       alert("모든 필수 항목을 입력해주세요.");
       return;
@@ -35,12 +40,16 @@ const Upload = () => {
         people: Number(people),
         imageUrl: previewUrl,
         category,
+        userEmail: session.user.email,
       }),
     });
 
     const data = await response.json();
-    console.log(data);
-    alert("업로드가 완료되었습니다!");
+    if (response.ok) {
+      alert("업로드가 완료되었습니다!");
+    } else {
+      alert(`업로드 실패: ${data.message}`);
+    }
   };
 
   const handleFileSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -125,7 +134,6 @@ const Upload = () => {
               ))}
             </S.CategoryBox>
           </S.FormBox>
-
           <S.FormBox>
             <S.Label>제품 가격</S.Label>
             <S.Input
@@ -187,7 +195,6 @@ const Upload = () => {
             </S.FileBox>
           </S.FormBox>
         </S.UploadForm>
-
         <S.UploadButton onClick={handleUpload}>업로드</S.UploadButton>
       </S.UploadLayout>
     </>

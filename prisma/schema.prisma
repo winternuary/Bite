@@ -7,6 +7,14 @@ generator client {
   provider = "prisma-client-js"
 }
 
+model User {
+  id        String   @id @default(cuid())
+  name      String?
+  email     String?  @unique
+  image     String?
+  posts     Post[]   
+}
+
 model Post {
   id          Int      @id @default(autoincrement())
   title       String
@@ -17,4 +25,6 @@ model Post {
   imageUrl    String
   category    String
   createdAt   DateTime @default(now())
+  userId      String 
+  user        User     @relation(fields: [userId], references: [id])
 }
