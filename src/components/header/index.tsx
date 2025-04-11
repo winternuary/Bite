@@ -1,6 +1,7 @@
 "use client";
 
 import styled from "styled-components";
+import { signIn, signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 
 export const WholeLayout = styled.div`
@@ -37,6 +38,8 @@ export const Text = styled.p`
 `;
 
 const Header = () => {
+  const { data: session } = useSession();
+
   return (
     <WholeLayout>
       <HeaderLayout>
@@ -44,11 +47,17 @@ const Header = () => {
           <Logo src="/BiteLogo.svg" />
         </Link>
         <ButtonBox>
-          {/* <Text>김영은님</Text> */}
-          <Link href="/login">
-            <Button>로그인</Button>
-          </Link>
-          {/* <Button>물건 올리기</Button> */}
+          {session ? (
+            <>
+              <Text>{session.user?.name}님</Text>
+              <Button onClick={() => signOut()}>로그아웃</Button>
+              <Link href="/upload">
+                <Button>물건 올리기</Button>
+              </Link>
+            </>
+          ) : (
+            <Button onClick={() => signIn("google")}>로그인</Button>
+          )}
         </ButtonBox>
       </HeaderLayout>
     </WholeLayout>
