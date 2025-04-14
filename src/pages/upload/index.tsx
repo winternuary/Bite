@@ -138,7 +138,7 @@ const Upload = () => {
             <S.Label>제품 가격</S.Label>
             <S.Input
               type="number"
-              placeholder="가격을 입력해주세요."
+              placeholder="제품의 1인당 가격을 입력해주세요."
               value={price}
               onChange={(e) => setPrice(e.target.value)}
             />

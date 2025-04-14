@@ -48,6 +48,7 @@ export default async function handler(
     try {
       const posts = await prisma.post.findMany({
         orderBy: { createdAt: "desc" },
+        include: { user: true },
       });
       return res.status(200).json(posts);
     } catch (error) {

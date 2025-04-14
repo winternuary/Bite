@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const DetailLayout = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 50px 156px;
+  margin: 50px 200px;
 `;
 
 export const DetailBox = styled.div`
@@ -14,7 +14,6 @@ export const DetailBox = styled.div`
 export const Goods = styled.img`
   width: 550px;
   height: auto;
-  object-fit: contain;
   border-radius: 12px;
   background-color: #f9f9f9;
 `;
@@ -95,11 +94,35 @@ export const Link = styled.a`
 export const Button = styled.button`
   font-family: "Pretendard-Regular";
   font-size: 20px;
-  padding: 16px 204px;
+  padding: 16px 180px;
   background-color: #0073ff;
   color: #ffffff;
   border: none;
   font-weight: 500;
   border-radius: 4px;
   margin-top: 40px;
+  width: 100%;
+`;
+
+export const PriceRow = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const IconGroup = styled.div`
+  display: flex;
+  gap: 12px;
+`;
+
+export const Icon = styled.img`
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: 0.2s;
+
+  &:hover {
+    opacity: 1;
+  }
 `;

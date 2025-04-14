@@ -2,8 +2,8 @@
 
 import * as S from "./style";
 import { useState, useEffect } from "react";
-import Link from "next/link";
 import Header from "@/components/header";
+import Link from "next/link";
 
 type Post = {
   id: number;
@@ -15,6 +15,10 @@ type Post = {
   imageUrl: string;
   category: string;
   createdAt: string;
+  user: {
+    name: string;
+    image: string;
+  };
 };
 
 const Main = () => {
@@ -29,6 +33,7 @@ const Main = () => {
     const fetchPosts = async () => {
       const res = await fetch("/api/post");
       const data = await res.json();
+      console.log("받아온 post 데이터: ", data);
       setPosts(data);
     };
 
@@ -45,30 +50,37 @@ const Main = () => {
       <Header />
       <S.MainLayout>
         <S.CategoryBox>
-          <S.Button
-            isSelected={selectedButton === "전체"}
-            onClick={() => handleButtonClick("전체")}
-          >
-            전체
-          </S.Button>
-          <S.Button
-            isSelected={selectedButton === "생필품"}
-            onClick={() => handleButtonClick("생필품")}
-          >
-            생필품
-          </S.Button>
-          <S.Button
-            isSelected={selectedButton === "간식"}
-            onClick={() => handleButtonClick("간식")}
-          >
-            간식
-          </S.Button>
-          <S.Button
-            isSelected={selectedButton === "기타"}
-            onClick={() => handleButtonClick("기타")}
-          >
-            기타
-          </S.Button>
+          <S.Left>
+            {" "}
+            <S.Button
+              isSelected={selectedButton === "전체"}
+              onClick={() => handleButtonClick("전체")}
+            >
+              전체
+            </S.Button>
+            <S.Button
+              isSelected={selectedButton === "생필품"}
+              onClick={() => handleButtonClick("생필품")}
+            >
+              생필품
+            </S.Button>
+            <S.Button
+              isSelected={selectedButton === "간식"}
+              onClick={() => handleButtonClick("간식")}
+            >
+              간식
+            </S.Button>
+            <S.Button
+              isSelected={selectedButton === "기타"}
+              onClick={() => handleButtonClick("기타")}
+            >
+              기타
+            </S.Button>
+          </S.Left>
+
+          <Link href="/upload">
+            <S.UploadButton>물건 올리기</S.UploadButton>
+          </Link>
         </S.CategoryBox>
 
         <S.MainBox>
@@ -80,13 +92,9 @@ const Main = () => {
                 <S.Money>{post.price.toLocaleString()}원</S.Money>
                 <S.SubTitleBox>
                   <S.ProfileBox>
-                    <S.Profile src="/profile.svg" />
-                    <S.ProfileName>업로더</S.ProfileName>
+                    <S.Profile src={post.user.image} />
+                    <S.ProfileName>{post.user.name}님</S.ProfileName>
                   </S.ProfileBox>
-                  <S.PeopleBox>
-                    <S.PeopleImg src="/people.svg" />
-                    <S.PeopleText>{post.people}</S.PeopleText>
-                  </S.PeopleBox>
                 </S.SubTitleBox>
               </S.goods>
             </S.Link>

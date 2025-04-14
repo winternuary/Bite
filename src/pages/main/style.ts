@@ -6,7 +6,7 @@ export const MainLayout = styled.div`
 
 export const CategoryBox = styled.div`
   display: flex;
-  gap: 12px;
+  justify-content: space-between;
 `;
 
 export const Button = styled.button<{ isSelected: boolean }>`
@@ -69,15 +69,23 @@ export const Money = styled.p`
 export const ProfileBox = styled.div`
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 10px;
 `;
 
-export const Profile = styled.img``;
+export const Profile = styled.img`
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+`;
+
 export const ProfileName = styled.p`
   font-family: "Pretendard-Regular";
   font-size: 18px;
   font-weight: 500;
   color: #000000;
+  margin: 0;
 `;
 export const PeopleBox = styled.div`
   display: flex;
@@ -88,4 +96,24 @@ export const PeopleImg = styled.img``;
 
 export const PeopleText = styled.p`
   color: #505050;
+`;
+
+export const Left = styled.div`
+  display: flex;
+  gap: 12px;
+`;
+
+export const UploadButton = styled.button`
+  font-family: "Pretendard-Regular";
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #0073ff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: #005fdb;
+  }
 `;
