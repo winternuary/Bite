@@ -6,6 +6,7 @@ export const UploadLayout = styled.div`
 `;
 
 export const Title = styled.p`
+  font-family: "Pretendard-Regular";
   font-size: 24px;
   font-weight: 600;
   margin-bottom: 20px;
@@ -24,28 +25,32 @@ export const FormBox = styled.div`
 `;
 
 export const Label = styled.label`
+  font-family: "Pretendard-Regular";
   font-size: 16px;
   font-weight: 600;
   margin-bottom: 10px;
 `;
 
-export const Input = styled.input`
+export const Input = styled.input<{ isError?: boolean }>`
+  font-family: "Pretendard-Regular";
   padding: 12px 16px;
   font-size: 16px;
-  border: 1px solid #ddd;
+  border: 1px solid ${({ isError }) => (isError ? "#ff4d4f" : "#ddd")};
   border-radius: 6px;
 `;
 
-export const TextArea = styled.textarea`
+export const TextArea = styled.textarea<{ isError?: boolean }>`
+  font-family: "Pretendard-Regular";
   padding: 12px 16px;
   font-size: 16px;
-  border: 1px solid #ddd;
+  border: 1px solid ${({ isError }) => (isError ? "#ff4d4f" : "#ddd")};
   border-radius: 6px;
   height: 140px;
   resize: none;
 `;
 
 export const CountText = styled.p`
+  font-family: "Pretendard-Regular";
   text-align: right;
   font-size: 14px;
   color: #888;
@@ -58,6 +63,12 @@ export const FileBox = styled.div`
   align-items: flex-start;
 `;
 
+export const Error = styled.p`
+  font-family: "Pretendard-Regular";
+  color: #ff4d4f;
+  font-size: 13px;
+  margin: 0 0 4px 0;
+`;
 interface FileDropZoneProps {
   $dragActive?: boolean;
 }
@@ -93,11 +104,13 @@ export const FileIcon = styled.div`
 `;
 
 export const FileText = styled.p`
+  font-family: "Pretendard-Regular";
   font-size: 14px;
   color: #999;
 `;
 
 export const FileButton = styled.button`
+  font-family: "Pretendard-Regular";
   padding: 6px 12px;
   font-size: 14px;
   border: 1px solid #ccc;
@@ -106,6 +119,7 @@ export const FileButton = styled.button`
 `;
 
 export const DeleteButton = styled.button`
+  font-family: "Pretendard-Regular";
   margin-top: 10px;
   background: #f5f5f5;
   border: none;
@@ -115,6 +129,7 @@ export const DeleteButton = styled.button`
 `;
 
 export const UploadButton = styled.button`
+  font-family: "Pretendard-Regular";
   background-color: #0073ff;
   color: white;
   border: none;
