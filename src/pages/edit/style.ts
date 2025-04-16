@@ -6,6 +6,7 @@ export const UploadLayout = styled.div`
 `;
 
 export const Title = styled.p`
+  font-family: "Pretendard-Regular";
   font-size: 24px;
   font-weight: 600;
   margin-bottom: 20px;
@@ -24,12 +25,14 @@ export const FormBox = styled.div`
 `;
 
 export const Label = styled.label`
+  font-family: "Pretendard-Regular";
   font-size: 16px;
   font-weight: 600;
   margin-bottom: 10px;
 `;
 
 export const Input = styled.input`
+  font-family: "Pretendard-Regular";
   padding: 12px 16px;
   font-size: 16px;
   border: 1px solid #ddd;
@@ -37,6 +40,7 @@ export const Input = styled.input`
 `;
 
 export const TextArea = styled.textarea`
+  font-family: "Pretendard-Regular";
   padding: 12px 16px;
   font-size: 16px;
   border: 1px solid #ddd;
@@ -46,6 +50,7 @@ export const TextArea = styled.textarea`
 `;
 
 export const CountText = styled.p`
+  font-family: "Pretendard-Regular";
   text-align: right;
   font-size: 14px;
   color: #888;
@@ -79,6 +84,7 @@ export const ImagePreview = styled.img`
 `;
 
 export const UploadButton = styled.button`
+  font-family: "Pretendard-Regular";
   background-color: #0073ff;
   color: white;
   border: none;

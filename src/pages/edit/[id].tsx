@@ -1,12 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import ConfirmModal from "@/components/modal/modal";
 import { useRouter } from "next/router";
 import * as S from "./style";
 import Header from "@/components/header";
 
 const Edit = () => {
   const router = useRouter();
+  const [showModal, setShowModal] = useState(false);
   const { id } = router.query;
 
   const [form, setForm] = useState({
@@ -59,13 +61,12 @@ const Edit = () => {
         ...form,
         price: Number(form.price),
         people: Number(form.people),
-        imageUrl: previewUrl, // 이미지 수정은 제외
+        imageUrl: previewUrl,
       }),
     });
 
     if (res.ok) {
-      alert("수정이 완료되었습니다!");
-      router.push(`/detail/${id}`);
+      setShowModal(true);
     } else {
       alert("수정 실패!");
     }
@@ -139,6 +140,19 @@ const Edit = () => {
         </S.UploadForm>
         <S.UploadButton onClick={handleSubmit}>수정하기</S.UploadButton>
       </S.UploadLayout>
+      {showModal && (
+        <ConfirmModal
+          title="수정완료"
+          message="상품이 성공적으로 수정되었습니다."
+          confirmText="상세보기로 이동"
+          cancelText="닫기"
+          onCancel={() => setShowModal(false)}
+          onConfirm={() => {
+            setShowModal(false);
+            router.push(`/detail/${id}`);
+          }}
+        />
+      )}
     </>
   );
 };
