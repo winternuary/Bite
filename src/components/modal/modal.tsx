@@ -25,10 +25,9 @@ const ConfirmModal = ({
         {title && <S.Title>{title}</S.Title>}
         <S.Message>{message}</S.Message>
         <S.ButtonRow>
-          {cancelText &&
-            onCancel && ( // ❗️cancelText가 있을 때만 렌더링
-              <S.CancelButton onClick={onCancel}>{cancelText}</S.CancelButton>
-            )}
+          {cancelText && onCancel && (
+            <S.CancelButton onClick={onCancel}>{cancelText}</S.CancelButton>
+          )}
           <S.ConfirmButton onClick={onConfirm}>{confirmText}</S.ConfirmButton>
         </S.ButtonRow>
       </S.ModalBox>

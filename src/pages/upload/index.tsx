@@ -198,7 +198,6 @@ const Upload = () => {
           title="업로드 완료"
           message="상품이 성공적으로 업로드되었습니다."
           confirmText="홈으로 이동"
-          cancelText="닫기"
           onCancel={() => setShowModal(false)}
           onConfirm={() => {
             setShowModal(false);

@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import * as S from "./style";
 import Header from "@/components/header";
 import { useSession } from "next-auth/react";
+import ConfirmModal from "@/components/modal/modal";
 
 type Post = {
   id: number;
@@ -24,6 +25,9 @@ type Post = {
 };
 
 const Detail = () => {
+  const [showModal, setShowModal] = useState(false);
+  const [showDeletedCompleteModal, setShowDeletedCompleteModal] =
+    useState(false);
   const { data: session } = useSession();
   const router = useRouter();
   const { id } = router.query;
@@ -42,22 +46,9 @@ const Detail = () => {
     fetchPost();
   }, [id]);
 
-  const handleDelete = async () => {
-    const confirm = window.confirm("정말 삭제하시겠습니까?");
-    if (!confirm) return;
-
-    const res = await fetch(`/api/post/${id}`, {
-      method: "DELETE",
-    });
-
-    if (res.ok) {
-      alert("삭제되었습니다.");
-      router.push("/");
-    } else {
-      alert("삭제 실패");
-    }
+  const handleDelete = () => {
+    setShowModal(true);
   };
-
   const handleEdit = () => {
     router.push(`/edit/${id}`);
   };
@@ -109,6 +100,40 @@ const Detail = () => {
           </S.RightBox>
         </S.DetailBox>
       </S.DetailLayout>
+      {showModal && (
+        <ConfirmModal
+          title="정말 삭제하시겠습니까?"
+          message="삭제된 게시물은 되돌릴 수 없습니다."
+          confirmText="삭제"
+          cancelText="취소"
+          onCancel={() => setShowModal(false)}
+          onConfirm={async () => {
+            const res = await fetch(`/api/post/${id}`, {
+              method: "DELETE",
+            });
+
+            if (res.ok) {
+              setShowModal(false);
+              setShowDeletedCompleteModal(true);
+            } else {
+              alert("삭제 실패");
+            }
+          }}
+        />
+      )}
+
+      {showDeletedCompleteModal && (
+        <ConfirmModal
+          title="삭제 완료"
+          message="게시물이 성공적으로 삭제되었습니다."
+          confirmText="홈으로 이동"
+          onCancel={() => setShowDeletedCompleteModal(false)}
+          onConfirm={() => {
+            setShowDeletedCompleteModal(false);
+            router.push("/");
+          }}
+        />
+      )}
     </>
   );
 };

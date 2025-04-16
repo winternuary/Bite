@@ -15,7 +15,7 @@ export const Overlay = styled.div`
 
 export const ModalBox = styled.div`
   background-color: white;
-  padding: 24px 32px;
+  padding: 16px 28px;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   max-width: 360px;
@@ -23,14 +23,16 @@ export const ModalBox = styled.div`
 `;
 
 export const Title = styled.h2`
+  font-family: "Pretendard-Regular";
   font-size: 20px;
-  margin-bottom: 16px;
+  margin: 12px 0 12px 0;
 `;
 
 export const Message = styled.p`
+  font-family: "Pretendard-Regular";
   font-size: 16px;
   color: #333;
-  margin-bottom: 24px;
+  margin: 0 0 24px 0;
 `;
 
 export const ButtonRow = styled.div`
@@ -40,6 +42,7 @@ export const ButtonRow = styled.div`
 `;
 
 export const CancelButton = styled.button`
+  font-family: "Pretendard-Regular";
   padding: 8px 16px;
   background-color: #e5e5e5;
   border: none;
@@ -53,6 +56,7 @@ export const CancelButton = styled.button`
 `;
 
 export const ConfirmButton = styled.button`
+  font-family: "Pretendard-Regular";
   padding: 8px 16px;
   background-color: #0073ff;
   color: white;

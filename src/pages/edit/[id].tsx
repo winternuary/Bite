@@ -145,7 +145,6 @@ const Edit = () => {
           title="수정완료"
           message="상품이 성공적으로 수정되었습니다."
           confirmText="상세보기로 이동"
-          cancelText="닫기"
           onCancel={() => setShowModal(false)}
           onConfirm={() => {
             setShowModal(false);
