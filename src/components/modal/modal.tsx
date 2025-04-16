@@ -6,7 +6,7 @@ interface ConfirmModalProps {
   title?: string;
   message: string;
   onConfirm: () => void;
-  onCancel: () => void;
+  onCancel?: () => void;
   confirmText?: string;
   cancelText?: string;
 }
@@ -17,7 +17,7 @@ const ConfirmModal = ({
   onConfirm,
   onCancel,
   confirmText = "확인",
-  cancelText = "취소",
+  cancelText,
 }: ConfirmModalProps) => {
   return (
     <S.Overlay>
@@ -25,7 +25,10 @@ const ConfirmModal = ({
         {title && <S.Title>{title}</S.Title>}
         <S.Message>{message}</S.Message>
         <S.ButtonRow>
-          <S.CancelButton onClick={onCancel}>{cancelText}</S.CancelButton>
+          {cancelText &&
+            onCancel && ( // ❗️cancelText가 있을 때만 렌더링
+              <S.CancelButton onClick={onCancel}>{cancelText}</S.CancelButton>
+            )}
           <S.ConfirmButton onClick={onConfirm}>{confirmText}</S.ConfirmButton>
         </S.ButtonRow>
       </S.ModalBox>
