@@ -13,8 +13,9 @@ export const DetailBox = styled.div`
 
 export const Goods = styled.img`
   width: 550px;
-  height: auto;
+  height: 550px;
   border-radius: 12px;
+  object-fit: cover;
   background-color: #f9f9f9;
 `;
 
@@ -34,7 +35,7 @@ export const Name = styled.p`
   font-family: "Pretendard-Regular";
   font-size: 20px;
   font-weight: 500;
-  margin: 0;
+  margin: 0 0 4px 0;
 `;
 
 export const Title = styled.p`
