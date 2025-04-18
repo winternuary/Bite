@@ -53,25 +53,25 @@ const Main = () => {
           <S.Left>
             {" "}
             <S.Button
-              isSelected={selectedButton === "전체"}
+              $isSelected={selectedButton === "전체"}
               onClick={() => handleButtonClick("전체")}
             >
               전체
             </S.Button>
             <S.Button
-              isSelected={selectedButton === "생필품"}
+              $isSelected={selectedButton === "생필품"}
               onClick={() => handleButtonClick("생필품")}
             >
               생필품
             </S.Button>
             <S.Button
-              isSelected={selectedButton === "간식"}
+              $isSelected={selectedButton === "간식"}
               onClick={() => handleButtonClick("간식")}
             >
               간식
             </S.Button>
             <S.Button
-              isSelected={selectedButton === "기타"}
+              $isSelected={selectedButton === "기타"}
               onClick={() => handleButtonClick("기타")}
             >
               기타

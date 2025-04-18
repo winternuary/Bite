@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+interface ButtonProps {
+  $isSelected: boolean; // ✅ '$' prefix를 붙여주면 DOM에 전달되지 않음!
+}
+
 export const MainLayout = styled.div`
   margin: 20px 200px 0 200px;
 `;
@@ -11,12 +15,13 @@ export const CategoryBox = styled.div`
   align-items: center;
 `;
 
-export const Button = styled.button<{ isSelected: boolean }>`
+export const Button = styled.button<ButtonProps>`
   font-family: "Pretendard-Regular";
   font-size: 18px;
-  color: ${({ isSelected }) => (isSelected ? "#ffffff" : "#5A5A5A")};
-  background-color: ${({ isSelected }) => (isSelected ? "#0073FF" : "#ffffff")};
-  border: ${({ isSelected }) => (isSelected ? "none" : "solid 1px #e8e8e8")};
+  color: ${({ $isSelected }) => ($isSelected ? "#ffffff" : "#5A5A5A")};
+  background-color: ${({ $isSelected }) =>
+    $isSelected ? "#0073FF" : "#ffffff"};
+  border: ${({ $isSelected }) => ($isSelected ? "none" : "solid 1px #e8e8e8")};
   padding: 8px 18px;
   border-radius: 8px;
   font-weight: 500;
