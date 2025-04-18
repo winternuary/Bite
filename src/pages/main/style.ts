@@ -7,6 +7,8 @@ export const MainLayout = styled.div`
 export const CategoryBox = styled.div`
   display: flex;
   justify-content: space-between;
+  width: 100%;
+  align-items: center;
 `;
 
 export const Button = styled.button<{ isSelected: boolean }>`
@@ -103,6 +105,12 @@ export const Left = styled.div`
   gap: 12px;
 `;
 
+export const Right = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 12px;
+`;
+
 export const UploadButton = styled.button`
   font-family: "Pretendard-Regular";
   font-size: 16px;
@@ -116,4 +124,12 @@ export const UploadButton = styled.button`
   &:hover {
     background-color: #005fdb;
   }
+`;
+
+export const Chatting = styled.p`
+  font-family: "Pretendard-Regular";
+  font-size: 16px;
+  white-space: nowrap;
+  color: #333;
+  margin: 0;
 `;

@@ -8,23 +8,37 @@ generator client {
 }
 
 model User {
-  id        String   @id @default(cuid())
-  name      String?
-  email     String?  @unique
-  image     String?
-  posts     Post[]   
+  id           String        @id @default(cuid())
+  name         String?
+  email        String?       @unique
+  image        String?
+  posts        Post[]
+  participants Participant[]
 }
 
 model Post {
-  id          Int      @id @default(autoincrement())
+  id          Int           @id @default(autoincrement())
   title       String
   description String
   price       Int
   link        String?
   people      Int
+  current     Int           @default(1)
   imageUrl    String
   category    String
-  createdAt   DateTime @default(now())
-  userId      String 
-  user        User     @relation(fields: [userId], references: [id])
+  createdAt   DateTime      @default(now())
+  userId      String
+  user        User          @relation(fields: [userId], references: [id])
+  Participant Participant[]
+}
+
+model Participant {
+  id       Int      @id @default(autoincrement())
+  user     User     @relation(fields: [userId], references: [id])
+  userId   String
+  post     Post     @relation(fields: [postId], references: [id])
+  postId   Int
+  joinedAt DateTime @default(now())
+
+  @@unique([userId, postId])
 }

@@ -77,10 +77,12 @@ const Main = () => {
               기타
             </S.Button>
           </S.Left>
-
-          <Link href="/upload">
-            <S.UploadButton>물건 올리기</S.UploadButton>
-          </Link>
+          <S.Right>
+            <Link href="/upload">
+              <S.UploadButton>물건 올리기</S.UploadButton>
+            </Link>
+            <S.Chatting>채팅목록(아이콘)</S.Chatting>
+          </S.Right>
         </S.CategoryBox>
 
         <S.MainBox>
