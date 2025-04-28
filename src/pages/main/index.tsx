@@ -81,7 +81,9 @@ const Main = () => {
             <Link href="/upload">
               <S.UploadButton>물건 올리기</S.UploadButton>
             </Link>
-            <S.Chatting>채팅목록(아이콘)</S.Chatting>
+            <Link href="/chatting">
+              <S.Chatting>채팅목록</S.Chatting>
+            </Link>
           </S.Right>
         </S.CategoryBox>
 

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 interface ButtonProps {
-  $isSelected: boolean; // ✅ '$' prefix를 붙여주면 DOM에 전달되지 않음!
+  $isSelected: boolean;
 }
 
 export const MainLayout = styled.div`
@@ -131,10 +131,18 @@ export const UploadButton = styled.button`
   }
 `;
 
-export const Chatting = styled.p`
+export const Chatting = styled.button`
   font-family: "Pretendard-Regular";
   font-size: 16px;
-  white-space: nowrap;
-  color: #333;
-  margin: 0;
+  font-weight: 500;
+  color: #333333;
+  background-color: #f2f2f2;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #e6e6e6;
+  }
 `;
