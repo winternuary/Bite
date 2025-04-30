@@ -2,12 +2,17 @@
 
 import * as S from "./style";
 import Header from "@/components/header";
+import Link from "next/link";
 
 const List = () => {
   return (
     <>
       <Header />
-      <S.ListLayout></S.ListLayout>
+      <S.ListLayout>
+        <Link href={`/chatting/chat/`}>
+          <S.ChattingList></S.ChattingList>
+        </Link>
+      </S.ListLayout>
     </>
   );
 };

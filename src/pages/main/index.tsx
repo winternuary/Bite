@@ -51,7 +51,6 @@ const Main = () => {
       <S.MainLayout>
         <S.CategoryBox>
           <S.Left>
-            {" "}
             <S.Button
               $isSelected={selectedButton === "전체"}
               onClick={() => handleButtonClick("전체")}
@@ -81,7 +80,7 @@ const Main = () => {
             <Link href="/upload">
               <S.UploadButton>물건 올리기</S.UploadButton>
             </Link>
-            <Link href="/chatting">
+            <Link href="/chatting/list">
               <S.Chatting>채팅목록</S.Chatting>
             </Link>
           </S.Right>

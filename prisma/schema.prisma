@@ -8,28 +8,32 @@ generator client {
 }
 
 model User {
-  id           String        @id @default(cuid())
-  name         String?
-  email        String?       @unique
-  image        String?
-  posts        Post[]
-  participants Participant[]
+  id               String            @id @default(cuid())
+  name             String?
+  email            String?           @unique
+  image            String?
+  posts            Post[]
+  participants     Participant[]
+  chatParticipants ChatParticipant[]
+  messages         Message[]
 }
 
 model Post {
-  id          Int           @id @default(autoincrement())
+  id          Int      @id @default(autoincrement())
   title       String
   description String
   price       Int
   link        String?
   people      Int
-  current     Int           @default(1)
+  current     Int      @default(1)
   imageUrl    String
   category    String
-  createdAt   DateTime      @default(now())
+  createdAt   DateTime @default(now())
   userId      String
-  user        User          @relation(fields: [userId], references: [id])
+  user        User     @relation(fields: [userId], references: [id])
+
   Participant Participant[]
+  chatRoom    ChatRoom?
 }
 
 model Participant {
@@ -41,4 +45,35 @@ model Participant {
   joinedAt DateTime @default(now())
 
   @@unique([userId, postId])
+}
+
+model ChatRoom {
+  id     Int  @id @default(autoincrement())
+  postId Int  @unique
+  post   Post @relation(fields: [postId], references: [id])
+
+  participants ChatParticipant[]
+  messages     Message[]
+}
+
+model ChatParticipant {
+  id         Int    @id @default(autoincrement())
+  userId     String
+  chatRoomId Int
+
+  user     User     @relation(fields: [userId], references: [id])
+  chatRoom ChatRoom @relation(fields: [chatRoomId], references: [id])
+
+  @@unique([userId, chatRoomId])
+}
+
+model Message {
+  id         Int      @id @default(autoincrement())
+  content    String
+  createdAt  DateTime @default(now())
+  userId     String
+  chatRoomId Int
+
+  user     User     @relation(fields: [userId], references: [id])
+  chatRoom ChatRoom @relation(fields: [chatRoomId], references: [id])
 }

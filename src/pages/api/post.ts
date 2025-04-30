@@ -39,6 +39,19 @@ export default async function handler(
         },
       });
 
+      const chatRoom = await prisma.chatRoom.create({
+        data: {
+          postId: post.id,
+        },
+      });
+
+      await prisma.chatParticipant.create({
+        data: {
+          userId: user.id,
+          chatRoomId: chatRoom.id,
+        },
+      });
+
       return res.status(200).json({ message: "게시물 등록 성공", post });
     } catch (error) {
       console.error(error);
@@ -48,14 +61,21 @@ export default async function handler(
     try {
       const posts = await prisma.post.findMany({
         orderBy: { createdAt: "desc" },
-        include: { user: true },
+        include: {
+          user: {
+            select: {
+              name: true,
+              image: true,
+            },
+          },
+        },
       });
       return res.status(200).json(posts);
     } catch (error) {
       console.error(error);
       return res.status(500).json({ message: "데이터 불러오기 실패" });
     }
-  } else {
-    return res.status(405).json({ message: "허용되지 않은 메서드" });
   }
+
+  return res.status(405).json({ message: "허용되지 않은 메서드" });
 }
