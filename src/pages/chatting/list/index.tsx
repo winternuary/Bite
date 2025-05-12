@@ -8,6 +8,7 @@ import Link from "next/link";
 
 interface ChatRoomItem {
   roomId: number;
+  participantCount: number;
   post: {
     id: number;
     title: string;
@@ -40,12 +41,24 @@ const ChatList = () => {
       <Header />
       <S.Layout>
         <S.Title>채팅 목록</S.Title>
-        {chatRooms.map(({ roomId, post }) => (
-          <Link key={roomId} href={`/chatting/list/${roomId}`}>
-            <S.RoomBox>
-              <S.Thumbnail src={post.imageUrl} alt="썸네일" />
-              <S.PostTitle>{post.title}</S.PostTitle>
-            </S.RoomBox>
+        {chatRooms.map(({ roomId, post, participantCount }) => (
+          <Link
+            key={roomId}
+            href={`/chatting/list/${roomId}`}
+            passHref
+            legacyBehavior
+          >
+            <S.LinkBox>
+              <S.RoomBox>
+                <S.Thumbnail src={post.imageUrl} alt="썸네일" />
+                <S.TextBox>
+                  <S.PostTitle>{post.title} 공동구매 채팅방</S.PostTitle>
+                  <S.ParticipantInfo>
+                    참여 인원: {participantCount}명
+                  </S.ParticipantInfo>
+                </S.TextBox>
+              </S.RoomBox>
+            </S.LinkBox>
           </Link>
         ))}
       </S.Layout>
