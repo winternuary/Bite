@@ -58,6 +58,27 @@ const Detail = () => {
 
   if (!post) return <div>로딩 중...</div>;
 
+  const handleJoin = async () => {
+    if (!session?.user?.email) {
+      alert("로그인이 필요합니다.");
+      return;
+    }
+
+    const res = await fetch(`/api/participant/${id}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ userEmail: session.user.email }),
+    });
+
+    const data = await res.json();
+    if (res.ok) {
+      alert("공동구매 참여 완료!");
+      router.push("/chatting/list");
+    } else {
+      alert(data.message || "참여 실패");
+    }
+  };
+
   return (
     <>
       <Header />
@@ -95,8 +116,7 @@ const Detail = () => {
                 </S.Link>
               </>
             )}
-
-            <S.Button>공동구매하기</S.Button>
+            <S.Button onClick={handleJoin}>공동구매하기</S.Button>
           </S.RightBox>
         </S.DetailBox>
       </S.DetailLayout>
