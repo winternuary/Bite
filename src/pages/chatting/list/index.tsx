@@ -44,7 +44,7 @@ const ChatList = () => {
         {chatRooms.map(({ roomId, post, participantCount }) => (
           <Link
             key={roomId}
-            href={`/chatting/list/${roomId}`}
+            href={`/chatting/room/${roomId}`}
             passHref
             legacyBehavior
           >

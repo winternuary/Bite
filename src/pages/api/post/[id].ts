@@ -7,10 +7,16 @@ export default async function handler(
 ) {
   const { id } = req.query;
 
+  if (!id || typeof id !== "string") {
+    return res.status(400).json({ message: "유효하지 않은 ID입니다." });
+  }
+
+  const postId = Number(id);
+
   if (req.method === "GET") {
     try {
       const post = await prisma.post.findUnique({
-        where: { id: Number(id) },
+        where: { id: postId },
         include: { user: true },
       });
 
@@ -25,8 +31,30 @@ export default async function handler(
 
   if (req.method === "DELETE") {
     try {
+      const chatRoom = await prisma.chatRoom.findUnique({
+        where: { postId },
+      });
+
+      if (chatRoom) {
+        await prisma.message.deleteMany({
+          where: { chatRoomId: chatRoom.id },
+        });
+
+        await prisma.chatParticipant.deleteMany({
+          where: { chatRoomId: chatRoom.id },
+        });
+
+        await prisma.chatRoom.delete({
+          where: { id: chatRoom.id },
+        });
+      }
+
+      await prisma.participant.deleteMany({
+        where: { postId },
+      });
+
       await prisma.post.delete({
-        where: { id: Number(id) },
+        where: { id: postId },
       });
 
       return res.status(200).json({ message: "삭제 성공" });
@@ -42,7 +70,7 @@ export default async function handler(
 
     try {
       const updated = await prisma.post.update({
-        where: { id: Number(id) },
+        where: { id: postId },
         data: {
           title,
           description,
