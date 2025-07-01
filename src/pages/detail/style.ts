@@ -103,6 +103,12 @@ export const Button = styled.button`
   border-radius: 4px;
   margin-top: 40px;
   width: 100%;
+  cursor: pointer;
+
+  &:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
 `;
 
 export const PriceRow = styled.div`

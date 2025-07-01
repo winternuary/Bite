@@ -30,6 +30,7 @@ const Detail = () => {
     useState(false);
   const { data: session } = useSession();
   const router = useRouter();
+  const [isJoined, setIsJoined] = useState(false);
   const { id } = router.query;
 
   const [post, setPost] = useState<Post | null>(null);
@@ -45,6 +46,18 @@ const Detail = () => {
 
     fetchPost();
   }, [id]);
+
+  useEffect(() => {
+    if (post && session?.user?.email) {
+      fetch(
+        `/api/participant/check?postId=${post.id}&email=${session.user.email}`,
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          setIsJoined(data.isJoined);
+        });
+    }
+  }, [post, session]);
 
   const handleDelete = () => {
     setShowModal(true);
@@ -116,7 +129,9 @@ const Detail = () => {
                 </S.Link>
               </>
             )}
-            <S.Button onClick={handleJoin}>공동구매하기</S.Button>
+            <S.Button onClick={handleJoin} disabled={isJoined}>
+              {isJoined ? "공동구매 참여 완료" : "공동구매하기"}
+            </S.Button>
           </S.RightBox>
         </S.DetailBox>
       </S.DetailLayout>

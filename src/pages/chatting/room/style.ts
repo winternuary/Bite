@@ -7,6 +7,12 @@ export const ChatLayout = styled.div`
   height: calc(100vh - 80px);
 `;
 
+export const RoomTitle = styled.h2`
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+`;
+
 export const MessageList = styled.div`
   flex: 1;
   overflow-y: auto;
@@ -15,16 +21,47 @@ export const MessageList = styled.div`
   border-radius: 12px;
   border: 1px solid #ddd;
   margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 `;
 
-export const Message = styled.div`
-  margin-bottom: 10px;
-  background: #e8f0fe;
+interface MessageProps {
+  $sender: "me" | "other";
+}
+
+export const Message = styled.div<MessageProps>`
+  align-self: ${({ $sender }) =>
+    $sender === "me" ? "flex-end" : "flex-start"};
+  background: ${({ $sender }) => ($sender === "me" ? "#fff59d" : "#e8f0fe")};
+  color: #000;
   padding: 10px 14px;
-  border-radius: 8px;
-  width: fit-content;
+  border-radius: 16px;
   max-width: 60%;
+  position: relative;
   font-size: 15px;
+  line-height: 1.4;
+
+  /* 말풍선 꼬리 */
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    ${({ $sender }) =>
+      $sender === "me"
+        ? `
+      right: -8px;
+      border-left: 8px solid #fff59d;
+      border-top: 8px solid transparent;
+      border-bottom: 0 solid transparent;
+    `
+        : `
+      left: -8px;
+      border-right: 8px solid #e8f0fe;
+      border-top: 8px solid transparent;
+      border-bottom: 0 solid transparent;
+    `}
+  }
 `;
 
 export const InputBox = styled.div`

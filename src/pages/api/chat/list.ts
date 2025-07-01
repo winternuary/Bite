@@ -1,4 +1,3 @@
-// pages/api/chat/list.ts
 import type { NextApiRequest, NextApiResponse } from "next";
 import { prisma } from "@/lib/prisma";
 
@@ -24,6 +23,7 @@ export default async function handler(
             chatRoom: {
               include: {
                 post: true,
+                participants: true, // ✅ 추가: 참여 인원 수 확인용
               },
             },
           },
@@ -36,6 +36,7 @@ export default async function handler(
 
     const chatRooms = user.chatParticipants.map((p) => ({
       roomId: p.chatRoomId,
+      participantCount: p.chatRoom.participants.length, // ✅ 추가
       post: {
         id: p.chatRoom.post.id,
         title: p.chatRoom.post.title,
